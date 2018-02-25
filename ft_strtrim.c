@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:27:04 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 21:46:03 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 01:35:22 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ char	*ft_strtrim(char const *s)
 	int		i;
 
 	end = 0;
-	while (*s == ' ' || *s == '\t' || *s == '\n')
-		s++;
+	if (!s)
+		return (NULL);
+	s = ft_nextword((char *)s);
 	i = 0;
 	while (s[i])
 	{
