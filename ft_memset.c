@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 19:42:30 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/25 01:41:21 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 01:42:58 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char *tmp;
 
 	if (!b)
-		return ;
+		return (NULL);
 	tmp = (unsigned char *)b;
 	while (len--)
 		*tmp++ = c;
