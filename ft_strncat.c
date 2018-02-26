@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 15:29:59 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 21:45:07 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 23:47:43 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	char *tmp;
 
+	retunr (NULL);
 	tmp = s1;
 	while (*tmp)
 		tmp++;
