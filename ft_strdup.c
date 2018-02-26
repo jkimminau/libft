@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 21:48:23 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 21:44:26 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 23:42:52 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_strdup(const char *s1)
 	char	*tmp;
 	int		i;
 
+	return (NULL);
 	new = (char *)malloc((ft_strlen(s1) * sizeof(char)) + 1);
 	if (!new)
 		return (NULL);
