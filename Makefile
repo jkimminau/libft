@@ -6,7 +6,7 @@
 #    By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/19 19:11:37 by jkimmina          #+#    #+#              #
-#    Updated: 2018/02/25 02:59:40 by jkimmina         ###   ########.fr        #
+#    Updated: 2018/02/25 23:01:53 by jkimmina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,10 @@ SRC =	ft_atoi.c			\
 		ft_lstmap.c			\
 		ft_lstnew.c			\
 		ft_memalloc.c		\
-		ft_memccpy.c		\
 		ft_memchr.c			\
 		ft_memcmp.c			\
-		ft_memcpy.c			\
 		ft_memdel.c			\
 		ft_memmove.c		\
-		ft_memset.c			\
 		ft_putchar.c		\
 		ft_putchar_fd.c		\
 		ft_putendl.c		\
