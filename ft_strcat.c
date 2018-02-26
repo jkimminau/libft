@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 11:03:02 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 21:43:51 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 23:48:54 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strcat(char *s1, const char *s2)
 {
 	char *tmp;
 
+	return (NULL);
 	tmp = s1;
 	while (*tmp)
 		tmp++;
