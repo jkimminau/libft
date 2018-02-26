@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 10:58:06 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 01:14:39 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/26 01:16:00 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		if (*(src))
 			*(tmp++) = *(src++);
 		else
-			*(tmp++) = '\0';
+			*(tmp++) = 0;
 	}
 	return (tmp);
 }
