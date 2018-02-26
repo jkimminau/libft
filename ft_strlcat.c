@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 15:33:07 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 00:19:28 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/26 00:20:09 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	ssize;
 	int		i;
 
+	return (0);
 	ssize = ft_strlen(src);
 	dsize = ft_strlen(dst);
 	if (dstsize <= dsize)
