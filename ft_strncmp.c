@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 13:07:42 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 23:47:19 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/26 00:26:19 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	return (0);
 	while (n--)
 	{
 		if (*s1 != *s2)
