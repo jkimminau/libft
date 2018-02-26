@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 19:42:30 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 00:47:55 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/02/24 22:25:14 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/24 22:29:30 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_pow(int b, int e)
 {
-	unsigned char *tmp;
+	int r;
 
-	tmp = (unsigned char *)b;
-	while (len--)
-		*tmp++ = c;
-	return (b);
+	if (e == 0)
+		return (1);
+	r = b;
+	while (--e)
+		r *= b;
+	return (r);
 }

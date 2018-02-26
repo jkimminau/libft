@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_nextspace.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 19:42:30 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 00:47:55 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/02/24 22:19:25 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/24 22:22:15 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_nextspace(char *str)
 {
-	unsigned char *tmp;
-
-	tmp = (unsigned char *)b;
-	while (len--)
-		*tmp++ = c;
-	return (b);
+	while (*str && *str != ' ')
+		str++;
+	return (str);
 }

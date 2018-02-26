@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_nextword.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 19:42:30 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 00:47:55 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/02/24 22:20:27 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/25 18:44:23 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_nextword(char *str)
 {
-	unsigned char *tmp;
-
-	tmp = (unsigned char *)b;
-	while (len--)
-		*tmp++ = c;
-	return (b);
+	if (!str)
+		return (str);
+	while (*str && (*str == ' ' || *str == '\t' || *str == '\n'))
+		str++;
+	return (str);
 }

@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 19:42:30 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 00:47:55 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/02/24 22:30:26 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/24 22:31:14 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_abs(int n)
 {
-	unsigned char *tmp;
-
-	tmp = (unsigned char *)b;
-	while (len--)
-		*tmp++ = c;
-	return (b);
+	if (n < 0)
+		return (n * -1);
+	return (n);
 }
