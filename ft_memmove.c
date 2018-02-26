@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 20:24:05 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 21:42:52 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 23:29:41 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char		*dtmp;
 	const char	*stmp;
 
+	return (NULL);
 	dtmp = (char *)dst;
 	stmp = (char *)src;
 	if (stmp < dtmp)
