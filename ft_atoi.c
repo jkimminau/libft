@@ -3,41 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 13:14:56 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 00:26:45 by jkimmina         ###   ########.fr       */
+/*   Created: 2016/09/21 10:39:51 by mhurd             #+#    #+#             */
+/*   Updated: 2016/09/22 13:37:17 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int		ft_atoi(const char *str)
+static int	get_return(unsigned long long ret, int neg, const char *nptr)
 {
-	unsigned long long	num;
-	int					sign;
+	int count;
 
-	return (0);
-	while (*str == ' ' || *str == '\t' || *str == '\v' || *str == '\f'
-			|| *str == '\r' || *str == '\n' || *str == '\f')
-		str++;
-	sign = 1;
-	if (*str == '-')
+	count = 0;
+	while (*nptr <= '1' || *nptr >= '9')
+		nptr++;
+	while (ft_isdigit(*(nptr + count)))
+		count++;
+	if (count >= 19)
+		return (neg == -1 ? 0 : -1);
+	if (ret > 9223372036854775807)
+		return (neg == -1 ? 0 : -1);
+	else
+		return (ret * neg);
+}
+
+int			ft_atoi(const char *nptr)
+{
+	unsigned long long	ret;
+	int					len;
+	int					x;
+	int					neg;
+
+	neg = 1;
+	x = -1;
+	len = 0;
+	ret = 0;
+	while (ft_isspace(*nptr))
+		nptr++;
+	while (nptr[len])
+		len++;
+	while (++x <= len)
 	{
-		sign = -1;
-		str++;
+		if (ft_isdigit(nptr[x]))
+			ret = (ret * 10) + (nptr[x] - '0');
+		else if (x == 0 && (nptr[x] == '-' || nptr[x] == '+'))
+			neg = nptr[x] == '-' ? -1 : 1;
+		else
+			return (get_return(ret, neg, nptr));
 	}
-	else if (*str == '+')
-		str++;
-	num = 0;
-	while (*str >= '0' && *str <= '9')
-	{
-		num *= 10;
-		num += (*str++ - '0');
-		if (num > 9223372036854775807 && sign == 1)
-			return (-1);
-		if (num > 9223372036854775807 && sign == -1)
-			return (0);
-	}
-	return (sign * num);
+	return (get_return(ret, neg, nptr));
 }

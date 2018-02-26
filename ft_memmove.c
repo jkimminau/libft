@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 20:24:05 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/25 23:29:41 by jkimmina         ###   ########.fr       */
+/*   Created: 2016/09/21 09:34:50 by mhurd             #+#    #+#             */
+/*   Updated: 2016/09/21 13:10:01 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char		*dtmp;
-	const char	*stmp;
+	size_t i;
 
-	return (NULL);
-	dtmp = (char *)dst;
-	stmp = (char *)src;
-	if (stmp < dtmp)
-		while (len--)
-			dtmp[len] = stmp[len];
+	if (src < dest)
+		ft_memcpy(dest, src, len);
 	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	{
+		i = 0;
+		while (i < len)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return (dest);
 }

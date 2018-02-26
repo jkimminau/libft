@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 11:30:15 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/26 00:25:21 by jkimmina         ###   ########.fr       */
+/*   Created: 2016/09/21 22:11:40 by mhurd             #+#    #+#             */
+/*   Updated: 2016/09/21 22:30:58 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
+	size_t	index;
+	size_t	index2;
 
-	return (NULL);
-	if (!*needle || needle == 0)
-		return ((char *)haystack);
-	while (*haystack && len--)
+	if (!*little)
+		return ((char *)big);
+	index2 = 0;
+	while (big[index2])
 	{
-		i = 0;
-		while (haystack[i] == needle[i] && haystack[i])
-			i++;
-		if (needle[i] == '\0' && len >= i - 1)
-			return ((char *)haystack);
-		haystack++;
+		index = 0;
+		while (big[index2 + index] == little[index] && index2 + index < len)
+			if (!little[++index])
+				return ((char *)(big + index2));
+		index2++;
 	}
-	return (NULL);
+	return (0);
 }
