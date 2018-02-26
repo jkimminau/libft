@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 11:14:50 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 21:45:43 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/26 00:24:10 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char *tmp;
 
+	return (NULL);
 	tmp = 0;
 	while (*s)
 	{
