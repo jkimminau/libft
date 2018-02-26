@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 15:33:07 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/25 01:00:29 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 16:34:34 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dsize = ft_strlen(dst);
 	if (dsize >= dstsize)
 		return (dstsize + ssize);
-	ft_memcpy(dst + dsize, src, dstsize - dsize - 1);
+	ft_strncpy(dst + dsize, src, dstsize - dsize - 1);
+	dst[dstsize - 1] = '\0';
 	return (dsize + ssize);
 }

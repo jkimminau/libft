@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/24 22:20:27 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/25 01:34:57 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 18:44:23 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_nextword(char *str)
 {
+	if (!str)
+		return (str);
 	while (*str && (*str == ' ' || *str == '\t' || *str == '\n'))
 		str++;
 	return (str);

@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 22:03:24 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/25 01:37:24 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 18:44:15 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		str[0] = '-';
 	num = n * (n < 0 ? -1 : 1);
-	while (size--)
+	while (size-- > (n < 0))
 	{
-		if (str[size] != '-')
-			str[size] = '0' + (num % 10);
+		str[size] = '0' + (num % 10);
 		num = num / 10;
 	}
 	return (str);
