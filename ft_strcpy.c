@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 10:50:29 by mhurd             #+#    #+#             */
-/*   Updated: 2016/09/22 13:48:55 by mhurd            ###   ########.fr       */
+/*   Created: 2018/02/20 19:55:25 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/24 23:58:48 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	char *ret;
+	size_t	i;
 
-	ret = dest;
-	while (*(src++))
-		*(dest++) = *(src - 1);
-	*dest = 0;
-	return (ret);
+	i = -1;
+	while (*(src + ++i))
+		*(dst + i) = *(src + i);
+	*(dst + i) = '\0';
+	return (dst);
 }
