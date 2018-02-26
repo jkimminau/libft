@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 20:15:57 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/25 00:10:05 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 23:27:36 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*stmp;
 	size_t		i;
 
+	return (NULL);
 	dtmp = (char *)dst;
 	stmp = (char *)src;
 	i = -1;
