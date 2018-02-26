@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 17:25:35 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 22:45:14 by jkimmina         ###   ########.fr       */
+/*   Created: 2016/09/21 16:54:43 by mhurd             #+#    #+#             */
+/*   Updated: 2016/09/21 17:00:00 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strdup(const char *s)
 {
-	if (as && *as)
-	{
-		ft_memdel((void **)as);
-		*as = NULL;
-	}
+	char	*ret;
+
+	ret = (char *)ft_strnew(ft_strlen(s) * sizeof(char));
+	return (ret ? ft_strcpy(ret, s) : NULL);
 }
