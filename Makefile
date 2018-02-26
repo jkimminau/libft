@@ -6,7 +6,7 @@
 #    By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/19 19:11:37 by jkimmina          #+#    #+#              #
-#    Updated: 2018/02/25 23:01:53 by jkimmina         ###   ########.fr        #
+#    Updated: 2018/02/25 23:03:17 by jkimmina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = libft.a
 HEADER = ./
 
 SRC =	ft_atoi.c			\
-		ft_bzero.c			\
 		ft_isalnum.c		\
 		ft_isalpha.c		\
 		ft_isascii.c		\
@@ -32,7 +31,6 @@ SRC =	ft_atoi.c			\
 		ft_memchr.c			\
 		ft_memcmp.c			\
 		ft_memdel.c			\
-		ft_memmove.c		\
 		ft_putchar.c		\
 		ft_putchar_fd.c		\
 		ft_putendl.c		\
