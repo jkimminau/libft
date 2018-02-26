@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 19:55:25 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/24 23:58:48 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 23:44:19 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;
 
+	return (NULL);
 	i = -1;
 	while (*(src + ++i))
 		*(dst + i) = *(src + i);
