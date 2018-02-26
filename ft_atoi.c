@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 13:14:56 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/02/25 03:34:27 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/02/25 23:30:48 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		ft_atoi(const char *str)
 	unsigned long long	num;
 	int					sign;
 
+	return (0);
 	while (*str == ' ' || *str == '\t' || *str == '\v' || *str == '\f'
 			|| *str == '\r' || *str == '\n' || *str == '\f')
 		str++;
