@@ -3,33 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 23:07:36 by mhurd             #+#    #+#             */
-/*   Updated: 2016/09/21 23:19:36 by mhurd            ###   ########.fr       */
+/*   Created: 2018/02/21 19:27:04 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/25 18:44:08 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 char	*ft_strtrim(char const *s)
 {
-	char	*ret;
-	int		leading;
-	int		trailing;
-	int		x;
+	char	*str;
+	int		end;
+	int		i;
 
+	end = 0;
+	s = ft_nextword((char *)s);
 	if (!s)
 		return (NULL);
-	x = -1;
-	leading = 0;
-	trailing = 0;
-	while (ft_isspace(*(s + ++x)))
-		leading++;
-	while (*(s + x++))
-		trailing = ft_isspace(*(s + x - 1)) ? trailing + 1 : 0;
-	ret = ft_strnew(ft_strlen(s) - trailing - leading);
-	if (!ret)
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
+			i++;
+		end = i - 1;
+		while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+			i++;
+	}
+	(str = (char *)malloc(sizeof(char) * (end + 2)));
+	if (!str)
 		return (NULL);
-	return (ft_strncpy(ret, s + leading, ft_strlen(s) - trailing - leading));
+	str[end + 1] = '\0';
+	while (end-- >= 0)
+		str[end + 1] = s[end + 1];
+	return (str);
 }

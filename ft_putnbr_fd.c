@@ -3,23 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 23:38:57 by mhurd             #+#    #+#             */
-/*   Updated: 2016/09/21 23:40:48 by mhurd            ###   ########.fr       */
+/*   Created: 2018/02/23 15:09:42 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/25 01:21:18 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (nb < 0 && nb * -1 != nb)
+	unsigned int num;
+
+	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		nb *= -1;
+		num = -n;
 	}
-	if (nb % 10 != nb)
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd(nb % 10 > 0 ? nb % 10 + '0' : nb % 10 * (-1) + '0', fd);
+	else
+		num = n;
+	if (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	ft_putchar_fd('0' + num % 10, fd);
 }

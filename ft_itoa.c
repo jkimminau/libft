@@ -3,44 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 15:39:41 by mhurd             #+#    #+#             */
-/*   Updated: 2016/09/27 15:20:44 by mhurd            ###   ########.fr       */
+/*   Created: 2018/02/21 22:03:24 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/02/25 18:44:15 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-static int	chars(int n)
+char	*ft_itoa(int n)
 {
-	int c;
+	char			*str;
+	unsigned int	size;
+	unsigned int	num;
 
-	c = (n < 0) ? 2 : 1;
-	while (n && (n /= 10))
-		c++;
-	return (c);
-}
-
-char		*ft_itoa(int n)
-{
-	char	*ret;
-	int		neg;
-	int		index;
-
-	index = 0;
-	ret = ft_strnew(chars(n));
-	if (!ret)
-		return (NULL);
-	neg = (n < 0) ? 1 : 0;
-	while (n)
+	num = n * (n < 0 ? -1 : 1);
+	size = 1 + (n < 0);
+	while (num >= 10)
 	{
-		ret[index++] = (n % 10 > 0) ? (n % 10 + '0') : (n % 10 * (-1) + '0');
-		n /= 10;
+		size++;
+		num /= 10;
 	}
-	if (neg)
-		ret[index++] = '-';
-	if (ret[0] == 0)
-		ret[0] = '0';
-	return (ft_strrev(ret));
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	str[size] = '\0';
+	if (n < 0)
+		str[0] = '-';
+	num = n * (n < 0 ? -1 : 1);
+	while (size-- > (n < 0))
+	{
+		str[size] = '0' + (num % 10);
+		num = num / 10;
+	}
+	return (str);
 }
