@@ -6,7 +6,7 @@
 #    By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/19 19:11:37 by jkimmina          #+#    #+#              #
-#    Updated: 2018/04/01 16:23:19 by jkimmina         ###   ########.fr        #
+#    Updated: 2018/04/02 15:31:01 by jkimmina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,10 @@ SRC =	ft_atoi.c			\
 		ft_pow.c			\
 		ft_abs.c			\
 		ft_strndup.c		\
-		get_next_line.c
+		get_next_line.c		\
+		ft_strtointarr.c	\
+		ft_countwords.c		\
+		ft_putintarr.c
 
 OBJ =	$(SRC:.c=.o)
 

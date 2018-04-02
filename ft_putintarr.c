@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nextspace.c                                     :+:      :+:    :+:   */
+/*   ft_putintarr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/24 22:19:25 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/02 15:23:28 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/04/02 15:31:10 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/04/02 15:32:43 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_nextspace(char *str)
+void	ft_putintarr(int *arr, int size)
 {
-	while (*str && *str != ' ')
-		str++;
-	return (str);
+	int		i;
+
+	i = 0;
+	while (i < size)
+		ft_putnbr(arr[i++]);
 }

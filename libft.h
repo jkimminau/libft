@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 19:08:48 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/01 16:22:22 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/04/02 15:33:49 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,8 @@ char				*ft_nextl(char *str, char c);
 int					ft_pow(int b, int e);
 int					ft_abs(int n);
 int					get_next_line(int fd, char **line);
+int					*ft_strtointarr(char *str);
+int					ft_wordcount(char *str);
+void				ft_putintarr(int *arr, int size);
 
 #endif

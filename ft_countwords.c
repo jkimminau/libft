@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nextspace.c                                     :+:      :+:    :+:   */
+/*   ft_countwords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/24 22:19:25 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/02 15:23:28 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/04/02 15:21:06 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/04/02 15:24:08 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_nextspace(char *str)
+int		ft_countwords(char *str)
 {
-	while (*str && *str != ' ')
-		str++;
-	return (str);
+	int		wc;
+
+	wc = 0;
+	str = ft_nextword(str);
+	while (*str)
+	{
+		wc++;
+		str = ft_nextspace(str);
+		str = ft_nextword(str);
+	}
+	return (wc);
 }
