@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 14:25:55 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/03/06 15:08:26 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/04/04 13:59:26 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstnew(void	const *content, size_t content_size)
 		return (NULL);
 	if (content)
 	{
-		if(!(new->content = (void *)malloc(content_size)))
+		if (!(new->content = (void *)malloc(content_size)))
 		{
 			free(new);
 			return (NULL);
