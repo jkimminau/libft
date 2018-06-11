@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 22:03:24 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/22 14:39:10 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/04/23 15:57:33 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/04/23 16:41:19 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_itoa(int n)
+char	get_digit(int num)
+{
+	if (num < 10)
+		return ('0' + num);
+	else
+		return ('a' + num - 10);
+}
+
+char	*ft_itoa_base(unsigned int n, int base)
 {
 	char			*str;
 	unsigned int	size;
 	unsigned int	num;
 
-	num = n * (n < 0 ? -1 : 1);
-	size = 1 + (n < 0);
-	while (num >= 10)
+	num = n;
+	size = 1;
+	while (num >= (unsigned int)base)
 	{
 		size++;
-		num /= 10;
+		num /= base;
 	}
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
 	str[size] = '\0';
-	if (n < 0)
-		str[0] = '-';
-	num = n * (n < 0 ? -1 : 1);
-	while (size-- > (n < 0))
+	num = n;
+	while (size--)
 	{
-		str[size] = '0' + (num % 10);
-		num = num / 10;
+		str[size] = get_digit(num % base);
+		num = num / base;
 	}
 	return (str);
 }

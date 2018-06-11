@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_printf_flags.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 16:34:03 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/30 18:47:47 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/04/23 15:00:34 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/06/05 12:14:42 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#ifndef FT_PRINTF_FLAGS_H
+# define FT_PRINTF_FLAGS_H
 
-char	*ft_strnew(size_t size)
-{
-	char *tmp;
+# include <libft.h>
+# include <ft_printf_struct.h>
 
-	tmp = 0;
-	if (!(tmp = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	while (size)
-		tmp[size--] = 0;
-	tmp[size] = '\0';
-	return (tmp);
-}
+char	*alt_flag(char *conv, t_flags *flags);
+char	*space_flag(char *conv, t_flags *flags);
+char	*prec_flag(char *conv, t_flags *flags);
+char	*num_flag(char *conv, t_flags *flags);
+
+#endif

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 16:34:03 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/30 18:47:47 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/05/04 15:05:11 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/05/04 15:48:36 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_strnew(size_t size)
+void	ft_putwstr(wchar_t const *s)
 {
-	char *tmp;
-
-	tmp = 0;
-	if (!(tmp = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	while (size)
-		tmp[size--] = 0;
-	tmp[size] = '\0';
-	return (tmp);
+	while (*s)
+		ft_putwchar(*(s++));
 }

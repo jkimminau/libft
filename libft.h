@@ -6,7 +6,7 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 19:08:48 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/02 16:34:26 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/06/05 12:21:54 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ void				*ft_memmove(void *dst, void const *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
+size_t				ft_wstrlen(const wchar_t *s);
 char				*ft_strdup(const char *s1);
 char				*ft_strndup(const char *s1, size_t size);
 char				*ft_strcpy(char *dst, const char *src);
+wchar_t				*ft_wstrcpy(wchar_t *dst, const wchar_t *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
@@ -66,12 +68,20 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
+wchar_t				*ft_wstrsub(wchar_t const *s, int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_addprefix(char *pre, char *str);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(unsigned int n, int base);
+char				*ft_uitoa(uintmax_t n);
+char				*ft_uitoa_base(uintmax_t n, int base);
+char				*ft_sitoa(intmax_t n);
 void				ft_putchar(char c);
+void				ft_putwchar(wchar_t c);
 void				ft_putstr(char const *s);
+void				ft_putwstr(wchar_t const *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
@@ -89,9 +99,9 @@ char				*ft_nextword(char *str);
 char				*ft_nextl(char *str, char c);
 int					ft_pow(int b, int e);
 int					ft_abs(int n);
-int					get_next_line(int fd, char **line);
 int					*ft_strtointarr(char *str);
 int					ft_wordcount(char *str);
 void				ft_putintarr(int *arr, int size);
+char				*ft_capitalize(char *str);
 
 #endif

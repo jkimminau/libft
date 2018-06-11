@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 16:34:03 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/30 18:47:47 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/02/21 22:03:24 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/04/28 22:33:38 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_strnew(size_t size)
+char	*ft_uitoa(uintmax_t n)
 {
-	char *tmp;
+	char			*str;
+	unsigned int	size;
+	uintmax_t		num;
 
-	tmp = 0;
-	if (!(tmp = (char *)malloc(sizeof(char) * (size + 1))))
+	size = 1;
+	num = n;
+	while (num >= 10)
+	{
+		size++;
+		num /= 10;
+	}
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
 		return (NULL);
-	while (size)
-		tmp[size--] = 0;
-	tmp[size] = '\0';
-	return (tmp);
+	str[size] = '\0';
+	while (size--)
+	{
+		str[size] = '0' + (n % 10);
+		n = n / 10;
+	}
+	return (str);
 }

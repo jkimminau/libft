@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_printf_struct.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 16:34:03 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/04/30 18:47:47 by jkimmina         ###   ########.fr       */
+/*   Created: 2018/04/24 13:05:20 by jkimmina          #+#    #+#             */
+/*   Updated: 2018/06/05 12:15:04 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#ifndef FT_PRINTF_STRUCT_H
+# define FT_PRINTF_STRUCT_H
 
-char	*ft_strnew(size_t size)
+# include <stdlib.h>
+
+typedef struct	s_flags
 {
-	char *tmp;
+	int			alt;
+	int			zero;
+	int			minus;
+	int			plus;
+	int			space;
+	int			prec;
+	int			width;
+	int			strlen;
+	char		*key;
+	char		*flagstr;
+}				t_flags;
 
-	tmp = 0;
-	if (!(tmp = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	while (size)
-		tmp[size--] = 0;
-	tmp[size] = '\0';
-	return (tmp);
-}
+t_flags			*free_flags(t_flags *flags);
+t_flags			*new_flags(void);
+
+#endif
