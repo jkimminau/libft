@@ -6,15 +6,15 @@
 /*   By: jkimmina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:00:34 by jkimmina          #+#    #+#             */
-/*   Updated: 2018/06/05 12:14:42 by jkimmina         ###   ########.fr       */
+/*   Updated: 2018/07/23 15:35:10 by jkimmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_FLAGS_H
 # define FT_PRINTF_FLAGS_H
 
-# include <libft.h>
-# include <ft_printf_struct.h>
+# include "../libft.h"
+# include "./ft_printf_struct.h"
 
 char	*alt_flag(char *conv, t_flags *flags);
 char	*space_flag(char *conv, t_flags *flags);
